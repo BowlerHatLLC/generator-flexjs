@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<js:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:js="library://ns.apache.org/flexjs/express"
+	xmlns:local="*">
+	<js:initialView>
+		<local:InitialView/>
+	</js:initialView>
+</js:Application>

@@ -1,0 +1,19 @@
+{
+	"config": "node",
+	"compilerOptions": {
+		"targets": [
+			"JSNodeModule"
+		],
+		"external-library-path": [
+			"../typedefs/yeoman-generator/bin/yeoman-generator.swc",
+			"../typedefs/yosay/bin/yosay.swc",
+			"../typedefs/chalk/bin/chalk.swc"
+		],
+		"js-compiler-option": [
+			"--compilation_level SIMPLE_OPTIMIZATIONS"
+		]
+	},
+	"files": [
+		"src/FlexJSGenerator.as"
+	]
+}

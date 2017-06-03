@@ -1,0 +1,20 @@
+{
+	"config": "node",
+	"type": "lib",
+	"compilerOptions": {
+		"targets": [
+			"SWF",
+			"JSNode"
+		],
+		"keep-as3-metadata": [
+			"JSModule"
+		],
+		"source-path": [
+			"src"
+		],
+		"include-sources": [
+			"src"
+		],
+		"output": "bin/chalk.swc"
+	}
+}

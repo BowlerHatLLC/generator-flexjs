@@ -1,0 +1,8 @@
+{
+  "name": "generator-flexjs-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "asconfigc && rm -rf ../generators/app && mkdir -p ../generators && cp -r ./bin/js-release ../generators/app && cp -r ./templates ../generators/app"
+  }
+}
