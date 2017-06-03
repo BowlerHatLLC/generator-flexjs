@@ -57,7 +57,7 @@ package
 					"name": "config",
 					"message": "Would you like to store configuration options in a file?",
 					"type": "list",
-					"choices": [CONFIG_XML, CONFIG_ASCONFIG, CONFIG_MANUAL]
+					"choices": [CONFIG_MANUAL, CONFIG_ASCONFIG, CONFIG_XML]
 				},
 				{
 					"name": "targets",
