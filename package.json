@@ -15,7 +15,8 @@
     "yosay": "^2.0.0"
   },
   "scripts": {
-    "build": "npm run build --prefix app && npm run build --prefix mxml-component && npm run build --prefix class && npm run build --prefix interface"
+    "build": "npm run build --prefix app && npm run build --prefix mxml-component && npm run build --prefix class && npm run build --prefix interface",
+    "prepublish": "npm run build"
   },
   "repository": "BowlerHatLLC/generator-flexjs",
   "license": "Apache-2.0"
