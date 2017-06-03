@@ -34,7 +34,8 @@ package
 
 		private var _configResult:String;
 		private var _targetsResult:Array;
-		private var _nameResult:String;
+		private var _applicationNameResult:String;
+		private var _initialViewNameResult:String;
 
 		public function prompting():Object
 		{
@@ -45,6 +46,12 @@ package
 					"message": "What is the name of your project's main class?",
 					"type": "input",
 					"default": this.appname.replace(/[^\w$]/g, "")
+				},
+				{
+					"name": "initialViewName",
+					"message": "What is the name of your application's initial view?",
+					"type": "input",
+					"default": "InitialView"
 				},
 				{
 					"name": "config",
@@ -65,8 +72,19 @@ package
 
 		public function copyApplication():void
 		{
-			this.fs.copy(this.templatePath("App.mxml"), this.destinationPath("src/" + this._nameResult + ".mxml"));
-			this.fs.copy(this.templatePath("InitialView.mxml"), this.destinationPath("src/InitialView.mxml"));
+			var splitClassName:Array = this._initialViewNameResult.split(".");
+			var pathWithPackage:String = splitClassName.join("/");
+			var initialViewComponentName:String = splitClassName.pop();
+			var initialViewNamespace:String = "*";
+			if(splitClassName.length > 0)
+			{
+				initialViewNamespace = splitClassName.join(".") + ".*";
+			}
+			var contents:String = this.fs.read(this.templatePath("App.mxml"));
+			contents = contents.replace(/\$\{initialview.name\}/g, initialViewComponentName);
+			contents = contents.replace(/\$\{initialview.namespace\}/g, initialViewNamespace);
+			this.fs.write(this.destinationPath("src/" + this._applicationNameResult + ".mxml"), contents);
+			this.fs.copy(this.templatePath("InitialView.mxml"), this.destinationPath("src/" + pathWithPackage + ".mxml"));
 		}
 
 		public function copyConfig():void
@@ -97,7 +115,8 @@ package
 
 		public function _private_onPromptsComplete(answers:Object):void
 		{
-			this._nameResult = answers.name as String;
+			this._applicationNameResult = answers.name as String;
+			this._initialViewNameResult = answers.initialViewName as String;
 			this._configResult = answers.config as String;
 			this._targetsResult = answers.targets as Array;
 		}
@@ -112,7 +131,7 @@ package
 				},
 				"files":
 				[
-					"src/" + this._nameResult + ".mxml"
+					"src/" + this._applicationNameResult + ".mxml"
 				]
 			};
 			this.fs.writeJSON(this.destinationPath("asconfig.json"), asconfig);
@@ -133,7 +152,7 @@ package
 			contents += "\t\t</targets>\n" +
 					"\t</compiler>\n" +
 				"</flex-config>";
-			this.fs.write(this.destinationPath("src/" + this._nameResult + "-config.xml"), contents);
+			this.fs.write(this.destinationPath("src/" + this._applicationNameResult + "-config.xml"), contents);
 		}
 	}
 }
