@@ -36,6 +36,7 @@ package
 		private var _targetsResult:Array;
 		private var _applicationNameResult:String;
 		private var _initialViewNameResult:String;
+		private var _configXML:Object = {name: CONFIG_XML, value: CONFIG_XML};
 
 		public function prompting():Object
 		{
@@ -45,7 +46,8 @@ package
 					"name": "name",
 					"message": "What is the name of your project's main class?",
 					"type": "input",
-					"default": this.appname.replace(/[^\w$]/g, "")
+					"default": this.appname.replace(/[^\w$]/g, ""),
+					"validate": _private_validateName
 				},
 				{
 					"name": "initialViewName",
@@ -57,7 +59,7 @@ package
 					"name": "config",
 					"message": "Would you like to store configuration options in a file?",
 					"type": "list",
-					"choices": [CONFIG_MANUAL, CONFIG_ASCONFIG, CONFIG_XML]
+					"choices": [CONFIG_MANUAL, CONFIG_ASCONFIG, this._configXML]
 				},
 				{
 					"name": "targets",
@@ -106,6 +108,13 @@ package
 					break;
 				}
 			}
+		}
+
+		public function _private_validateName(input:String):Boolean
+		{
+			//the prompt for a later question should use the app name
+			this._configXML.name = input + "-config.xml";
+			return true;
 		}
 
 		public function _private_whenConfig(answers:Object):Object
