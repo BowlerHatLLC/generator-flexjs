@@ -18,8 +18,11 @@ package
 	public class MXMLComponentGenerator extends yeomanGenerator
 	{
 		private static const SUPER_APPLICATION:String = "Application";
-		private static const SUPER_VIEW:String = "View";
+		private static const SUPER_CONTAINER:String = "Container";
+		private static const SUPER_GROUP:String = "Group";
 		private static const SUPER_ITEM_RENDERER:String = "MXMLItemRenderer";
+		private static const SUPER_PANEL:String = "Panel";
+		private static const SUPER_VIEW:String = "View";
 		private static const SUPER_OTHER:String = "I'd like another component that isn't listed here...";
 		private static const NAMESPACE_EXPRESS:String = "library://ns.apache.org/flexjs/express";
 
@@ -51,11 +54,15 @@ package
 					"type": "list",
 					"choices":
 					[
-						SUPER_VIEW,
-						SUPER_ITEM_RENDERER,
 						SUPER_APPLICATION,
+						SUPER_CONTAINER,
+						SUPER_GROUP,
+						SUPER_ITEM_RENDERER,
+						SUPER_PANEL,
+						SUPER_VIEW,
 						SUPER_OTHER
-					]
+					],
+					"default": SUPER_VIEW
 				},
 				{
 					"name": "alternateSuperName",

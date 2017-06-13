@@ -1,0 +1,8 @@
+{
+  "name": "generator-flexjs-mxml",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "asconfigc && rm -rf ../generators/mxml && mkdir -p ../generators && cp -r ./bin/js-release ../generators/mxml && cp -r ./templates ../generators/mxml"
+  }
+}
