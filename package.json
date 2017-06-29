@@ -2,7 +2,7 @@
   "name": "generator-flexjs",
   "version": "0.1.0",
   "description": "Generate an Apache FlexJS application",
-  "homepage": "https://nextgenactionscript.com/vscode/",
+  "homepage": "https://nextgenactionscript.com/",
   "files": [
     "generators"
   ],
