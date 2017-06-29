@@ -15,7 +15,7 @@
     "yosay": "^2.0.0"
   },
   "scripts": {
-    "build": "npm run build --prefix app && npm run build --prefix mxml && npm run build --prefix class && npm run build --prefix interface",
+    "build": "npm run build --prefix typedefs/yeoman-generator && npm run build --prefix typedefs/yosay && npm run build --prefix typedefs/chalk && npm run build --prefix app && npm run build --prefix mxml && npm run build --prefix class && npm run build --prefix interface",
     "test": "mocha tests",
     "prepublish": "npm run build && npm test"
   },
