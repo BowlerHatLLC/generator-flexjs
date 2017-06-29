@@ -15,4 +15,5 @@ bin/
 Thumbs.db
 *.stackdump
 ._*
+npm-debug.log
 generator-flexjs-*.tgz
