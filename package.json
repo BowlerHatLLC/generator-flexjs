@@ -16,8 +16,12 @@
   },
   "scripts": {
     "build": "npm run build --prefix app && npm run build --prefix mxml && npm run build --prefix class && npm run build --prefix interface",
-    "prepublish": "npm run build"
+    "test": "mocha tests",
+    "prepublish": "npm run build && npm test"
   },
   "repository": "BowlerHatLLC/generator-flexjs",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "mocha": "^3.4.2"
+  }
 }
