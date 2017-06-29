@@ -8,4 +8,5 @@ cache:
     - "node_modules"
 install:
   - export FLEX_HOME=$PWD/node_modules/flexjs
-  - printf "y\ny\ny\n" | npm install
+  - yes | npm install flexjs
+  - npm install
