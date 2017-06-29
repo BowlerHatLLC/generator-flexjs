@@ -23,7 +23,7 @@ package
 		private static const SUPER_ITEM_RENDERER:String = "MXMLItemRenderer";
 		private static const SUPER_PANEL:String = "Panel";
 		private static const SUPER_VIEW:String = "View";
-		private static const SUPER_OTHER:String = "I'd like another component that isn't listed here...";
+		private static const SUPER_OTHER:Object = {value: "__other", name: "I'd like another component that isn't listed here..."};
 		private static const NAMESPACE_EXPRESS:String = "library://ns.apache.org/flexjs/express";
 
 		public function MXMLComponentGenerator(args:Object, options:Object)
@@ -106,7 +106,7 @@ package
 
 		public function _private_whenSuperNameIsOther(answers:Object):Object
 		{
-			return answers.superName === SUPER_OTHER;
+			return answers.superName === SUPER_OTHER.value;
 		}
 
 		public function _private_onPromptsComplete(answers:Object):void
