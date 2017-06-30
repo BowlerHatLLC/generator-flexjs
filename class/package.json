@@ -3,6 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "asconfigc && rm -rf ../generators/class && mkdir -p ../generators && cp -r ./bin/js-release ../generators/class && cp -r ./templates ../generators/class"
+    "build": "asconfigc && rimraf ../generators/class && mkdir -p ../generators && cp -r ./bin/js-release ../generators/class && cp -r ./templates ../generators/class"
   }
 }
