@@ -3,10 +3,7 @@ node_js:
   - 8
   - 7
   - 6
-cache:
-  directories:
-    - "node_modules"
 install:
-  - export FLEX_HOME=$TRAVIS_BUILD_DIR/node_modules/flexjs
-  - yes | npm install flexjs
+  - yes | npm install -g flexjs
+  - npm install -g asconfigc
   - npm install
