@@ -3,6 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "asconfigc && rimraf ../generators/mxml && mkdirp ../generators && ncp ./bin/js-release ../generators/mxml && ncp ./templates ../generators/mxml"
+    "build": "asconfigc && rimraf ../generators/mxml && mkdirp ../generators && ncp ./bin/js-release ../generators/mxml && ncp ./templates ../generators/mxml/templates"
   }
 }

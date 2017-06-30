@@ -3,6 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "asconfigc && rimraf ../generators/interface && mkdirp ../generators && ncp ./bin/js-release ../generators/interface && ncp ./templates ../generators/interface"
+    "build": "asconfigc && rimraf ../generators/interface && mkdirp ../generators && ncp ./bin/js-release ../generators/interface && ncp ./templates ../generators/interface/templates"
   }
 }
