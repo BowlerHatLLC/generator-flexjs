@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/BowlerHatLLC/generator-flexjs.svg?branch=master)](https://travis-ci.org/BowlerHatLLC/generator-flexjs)
 # generator-flexjs
 
 A generator for [Yeoman](http://yeoman.io/) to create a new Apache FlexJS project. Yeoman may be [run from the command line](http://yeoman.io/learning/) or even using [an extension in Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=samverschueren.yo).
