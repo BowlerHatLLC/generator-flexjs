@@ -16,8 +16,5 @@
 			"src"
 		],
 		"output": "bin/yeoman-generator.swc"
-	},
-	"files": [
-		"src/yeomanGenerator.as"
-	]
+	}
 }
